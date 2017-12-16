@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="./todoLIST.css">
+</head>
+<style>
+ 
+</style>
+<body>
+<div id="app">
+	<header class="bar bar-nav">
+	  <a class="icon icon-edit"></a>
+	</header>
+	<div class="content">
+        <div class="card">
+		    <div class="card-content todo-card" v-for="(todo,i) of todos">
+		        <div class="card-content-inner todo-content">{{todo.content}}</div>
+		        <div class="control-box">
+		      		<button class="button button-small button-success">
+						<span class="icon icon-check"></span>
+		      		</button>
+		      		<button class="button button-fill button-small button-danger">
+						<span class="icon icon-remove"></span>
+		      		</button>
+		        </div>
+		    </div>
+		 </div>
+        
+    </div>
+	
+	<nav class="bar bar-tab">
+		<div v-for="type in types">
+			
+		</div>
+        <div @click="showType='all'" :class="{active:showType=='all'}" class="circle all">1</div>
+        <div @click="showType='finish'" :class="{active:showType=='finish'}" class="circle finish">2</div>
+        <div @click="showType='unfinish'" :class="{active:showType=='unfinish'}" class="circle unfinish">3</div>
+    </nav>
+
+
+</div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="./todoLIST.js"></script>
+	
+</body>
+</html>
